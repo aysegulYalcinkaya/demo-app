@@ -6,11 +6,11 @@
 
         </div>
         <div class="mx-auto max-w-2xl text-center">
-            <img class="mx-auto h-60 w-auto" src="https://img.freepik.com/premium-vector/cute-samoyed-dog-waving-paw-cartoon-vector-illustration_42750-1071.jpg?w=1000"
-                 alt="Woof Haven">
-            <h2 class="mt-6 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Get in touch!</h2>
-            <p class="mt-6 text-lg leading-8 text-gray-600">Are we missing anywhere that you know loves dogs? Should we open this up to other cities?</p>
-            <button class="mt-6 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            <img class="mx-auto h-56 w-auto" src="https://imagedelivery.net/oft5YRXFnZE_M4wW8ODw6Q/9cf48fb9-3900-4862-5637-e466fbd3a700/public" alt="Woof Haven">
+
+            <h2 class="mt-9 text-3xl font-weight-normal tracking-tight text-gray-900 sm:text-4xl">Get in touch!</h2>
+            <p class="text-sm text-gray-500 mt-6">Are we missing anywhere that you know loves dogs? Should we open this up to other cities?</p>
+            <button class="mt-6 bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
                 <a href="mailto:matt.smith838@gmail.com">Get in touch</a>
             </button>
 
