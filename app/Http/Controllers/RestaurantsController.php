@@ -11,7 +11,7 @@ class RestaurantsController extends Controller
     public function restaurants()
     {
         $places = Places::where('type', 'restaurant')
-            ->orWhere('type','bar') ->get();
+            ->orWhere('type','bar') ->paginate(Config('app.limit'));
         $neighbourhoods = Places::select("neighbourhood")->distinct()->orderBy('neighbourhood', 'asc')->pluck('neighbourhood');
         return view('restaurants', ['places' => $places, 'neighbourhoods' => $neighbourhoods]);
     }
@@ -43,7 +43,7 @@ class RestaurantsController extends Controller
                         ->orWhere('type','bar');
                 });
         }
-        $places = $placesQuery->get();
+        $places = $placesQuery->paginate(Config('app.limit'));
 
         $neighbourhoods = Places::select("neighbourhood")->distinct()->orderBy('neighbourhood', 'asc')->pluck('neighbourhood');
         return view('restaurants', ['places' => $places, 'neighbourhoods' => $neighbourhoods, "selected_neighbourhood" => $neighbourhood, 'search' => $searchTerm, 'indoor' => $indoor]);

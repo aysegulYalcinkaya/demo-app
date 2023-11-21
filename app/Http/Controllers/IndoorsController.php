@@ -10,7 +10,7 @@ class IndoorsController extends Controller
 {
     public function indoors()
     {
-        $places = Places::where('inside', 1) ->get();
+        $places = Places::where('inside', 1) ->paginate(Config('app.limit'));
         $neighbourhoods = Places::select("neighbourhood")->distinct()->orderBy('neighbourhood', 'asc')->pluck('neighbourhood');
         return view('indoors', ['places' => $places, 'neighbourhoods' => $neighbourhoods,"inside"=>1]);
     }
@@ -36,7 +36,7 @@ class IndoorsController extends Controller
                         ->orWhere('city', 'LIKE', "%$searchTerm%");
                 })->where('inside', 1) ;
         }
-        $places = $placesQuery->get();
+        $places = $placesQuery->paginate(Config('app.limit'));
 
         $neighbourhoods = Places::select("neighbourhood")->distinct()->orderBy('neighbourhood', 'asc')->pluck('neighbourhood');
         return view('indoors', ['places' => $places, 'neighbourhoods' => $neighbourhoods, "selected_neighbourhood" => $neighbourhood, 'search' => $searchTerm, 'indoor' => "1"]);

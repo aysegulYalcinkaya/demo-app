@@ -7,7 +7,9 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\IndoorsController;
 use App\Http\Controllers\LocationController;
 use App\Http\Controllers\PlacesController;
+use App\Http\Controllers\PlayController;
 use App\Http\Controllers\PubsController;
+use App\Http\Controllers\RatingController;
 use App\Http\Controllers\RestaurantsController;
 use Illuminate\Support\Facades\Route;
 
@@ -28,6 +30,7 @@ Route::get('/', function () {
 Route::get('places', [PlacesController::class, 'places'])->name('places');
 Route::get('places/search', [PlacesController::class, 'search'])->name('places.search');
 Route::get('autocomplete', [PlacesController::class, 'autocomplete'])->name('autocomplete');
+Route::get('play', [PlayController::class, 'play'])->name('play');
 Route::get('pubs', [PubsController::class, 'pubs'])->name('pubs');
 Route::get('pubs/search', [PubsController::class, 'search'])->name('pubs.search');
 Route::get('cafes', [CafesController::class, 'cafes'])->name('cafes');
@@ -36,12 +39,15 @@ Route::get('restaurants', [RestaurantsController::class, 'restaurants'])->name('
 Route::get('restaurants/search', [RestaurantsController::class, 'search'])->name('restaurants.search');
 Route::get('indoors', [IndoorsController::class, 'indoors'])->name('indoors');
 Route::get('indoors/search', [IndoorsController::class, 'search'])->name('indoors.search');
-Route::get('location/{id}', [LocationController::class, 'location'])->name('location');
+Route::get('location/{name}', [LocationController::class, 'location'])->name('location');
+Route::post('location/save_review', [LocationController::class, 'save_review']);
 Route::get('about', [AboutController::class, 'about'])->name('about');
 Route::get('contact', [ContactController::class, 'contact'])->name('contact');
+Route::get('rating_explained', [RatingController::class, 'rating'])->name('rating');
 Route::get('login', [AuthController::class, 'login'])->name('login');
 Route::post('submit-login', [AuthController::class, 'postLogin'])->name('login.post');
 Route::get('register', [AuthController::class, 'registration'])->name('register');
 Route::post('submit-registration', [AuthController::class, 'postRegistration'])->name('register.post');
 Route::get('dashboard', [AuthController::class, 'dashboard']);
 Route::get('logout', [AuthController::class, 'logout'])->name('logout');
+

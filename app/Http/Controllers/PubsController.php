@@ -11,7 +11,7 @@ class PubsController extends Controller
     public function pubs()
     {
         $places = Places::where('type', 'pub')
-            ->orWhere('type', 'Brewpub')->orWhere('type', 'Brewery')->get();
+            ->orWhere('type', 'Brewpub')->orWhere('type', 'Brewery')->paginate(Config('app.limit'));
         $neighbourhoods = Places::select("neighbourhood")->distinct()->orderBy('neighbourhood', 'asc')->pluck('neighbourhood');
         return view('pubs', ['places' => $places, 'neighbourhoods' => $neighbourhoods]);
     }
@@ -45,7 +45,7 @@ class PubsController extends Controller
                         ->orWhere('type', 'Brewery');
                 });
         }
-        $places = $placesQuery->get();
+        $places = $placesQuery->paginate(Config('app.limit'));
 
         $neighbourhoods = Places::select("neighbourhood")->distinct()->orderBy('neighbourhood', 'asc')->pluck('neighbourhood');
         return view('pubs', ['places' => $places, 'neighbourhoods' => $neighbourhoods, "selected_neighbourhood" => $neighbourhood, 'search' => $searchTerm, 'indoor' => $indoor]);

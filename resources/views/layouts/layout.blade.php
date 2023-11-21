@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="h-full bg-gray-100">
+<html lang="en" class="h-full bg-white">
 <head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-5WD7JC3JST"></script>
@@ -17,14 +17,15 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PawsList - dog friendly venues in Toronto.</title>
+    <title>Dog-Friendly Venues In Toronto | Paws List</title>
     <meta name="description" content="
-  PawsList is the ultimate guide for dog friendly places in Toronto.">
-    <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/3307/3307778.png">
+  Paws List is the ultimate guide for dog-friendly pubs, restaurants, coffee shops, and cafes in Toronto.">
+    <link rel="icon" type="image/x-icon" href="https://imagedelivery.net/oft5YRXFnZE_M4wW8ODw6Q/d63cfeb0-c9a1-494b-2e68-99d7b67b2100/public">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
     <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.1/bootstrap3-typeahead.min.js"></script>
+            src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.1/bootstrap3-typeahead.min.js"></script>
     <style>
         .dropdown-menu {
             position: absolute;
@@ -55,51 +56,81 @@
             background-color: transparent;
             border: 0;
         }
+
+        p, h2, h3, li {
+            color:#001F68;
+        }
+
+
     </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'poppins': ['Poppins'],
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
+<body class="font-poppins">
 
 
-<nav class="bg-white">
-    <div class="mx-auto max-w-7xl px-4 px-6 lg:px-8">
+<nav class="bg-white border-b-2 border-black">
+    <div class="mx-auto max-w-7xl px-0 lg:px-0">
         <div class="flex h-16 items-center justify-between">
             <div class="flex items-center">
                 <div class="flex-shrink-0">
-                    <img class="h-8"
-                         src="https://imagedelivery.net/oft5YRXFnZE_M4wW8ODw6Q/ddd33672-1079-4694-2dba-486b53b2b700/public"
-                         alt="PawsList">
+                    <a href="/"><img class="h-14 mt-1 ml-2 lg:mr-10"
+                                     src="https://imagedelivery.net/oft5YRXFnZE_M4wW8ODw6Q/e36b530e-af68-4ade-0bf0-4f26b6bf9200/public"
+                                     alt="Paws List"></a>
                 </div>
                 <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-4">
-                        <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                        <a href="/"
-                           class="{{ request()->is('/') ? 'bg-gray-900 text-white' : 'text-black' }} hover:bg-white hover:text-gray-500 px-3 py-2 rounded-md text-sm font-medium">Home</a>
-                        <a href="/places"
-                           class="{{ request()->is('/places') ? 'bg-gray-900 text-black' : 'text-black' }} hover:bg-white hover:text-gray-500 px-3 py-2 rounded-md text-sm font-medium">All
-                            Places</a>
-                        <a href="/pubs"
-                           class="{{ request()->is('/pubs') ? 'bg-gray-900 text-black' : 'text-black' }} hover:bg-white hover:text-gray-500 px-3 py-2 rounded-md text-sm font-medium">Pubs
-                            & Breweries</a>
-                        <a href="/cafes"
-                           class="{{ request()->is('/cafes') ? 'bg-gray-900 text-black' : 'text-black' }} hover:bg-white hover:text-gray-500 px-3 py-2 rounded-md text-sm font-medium">Cafes
-                            & Coffee Shops</a>
+                    <div class="ml-52 flex items-baseline space-x-4">
+                        <div class="flex flex-row mt-6">
+                            <div><img src="https://imagedelivery.net/oft5YRXFnZE_M4wW8ODw6Q/e38211a5-7e12-42c9-c40c-2a76692f2000/public" alt="All dog-friendly places in Toronto" class="h-5 w-5"></div>
+                            <div><a href="/places"
+                                    class="{{ request()->is('/places') ? 'bg-gray-900 text-blue-900' : 'text-blue-900' }} hover:bg-white hover:text-gray-500 px-2 py-2 rounded-md text-xs font-normal ">All
+                                    Places</a></div>
+                        </div>
+
+                        <div class="flex flex-row mt-6">
+                            <div><img src="https://imagedelivery.net/oft5YRXFnZE_M4wW8ODw6Q/78465440-ad70-42ca-8bc4-99bb5bda3f00/public" alt="Dog-friendly pubs and breweries in Toronto" class="h-5 w-5"></div>
+                            <div><a href="/pubs"
+                                    class="{{ request()->is('/pubs') ? 'bg-gray-900 text-blue-900' : 'text-blue-900' }} hover:bg-white hover:text-gray-500 px-2 py-2 rounded-md text-xs font-normal">Pubs & Breweries</a></div>
+                        </div>
+
+                        <div class="flex flex-row mt-6">
+                            <div><img src="https://imagedelivery.net/oft5YRXFnZE_M4wW8ODw6Q/de8ab959-7209-4b6c-32f0-631788d18800/public" alt="Dog-friendly cafes and coffee shops in Toronto" class="h-5 w-5"></div>
+                            <div><a href="/cafes"
+                                    class="{{ request()->is('/cafes') ? 'bg-gray-900 text-blue-900' : 'text-blue-900' }} hover:bg-white hover:text-gray-500 px-2 py-2 rounded-md text-xs font-normal">Cafes & Coffee shops</a></div>
+                        </div>
+
                         @auth
                             <a href="/comments"
-                               class="{{ request()->is('/comments') ? 'bg-gray-900 text-black' : 'text-black' }} hover:bg-white hover:text-gray-500 px-3 py-2 rounded-md text-sm font-medium">My
+                               class="{{ request()->is('/comments') ? 'bg-gray-900 text-blue-900' : 'text-blue-900' }} hover:bg-white hover:text-gray-500 px-2 py-2 rounded-md text-xs font-light">My
                                 Reviews</a>
                         @endauth
-                        <a href="/restaurants"
-                           class="{{ request()->is('/restaurants') ? 'bg-gray-900 text-black' : 'text-black' }} hover:bg-white hover:text-gray-500 px-3 py-2 rounded-md text-sm font-medium">Restaurants
-                            & Bars</a>
-                        <a href="/indoors"
-                           class="{{ request()->is('/indoors') ? 'bg-gray-900 text-red-500' : 'text-red-500' }} hover:bg-white hover:text-gray-500 px-3 py-2 rounded-md text-sm font-medium">Paws
-                            Indoors</a>
+
+                        <div class="flex flex-row mt-6">
+                            <div><img src="https://imagedelivery.net/oft5YRXFnZE_M4wW8ODw6Q/38dc7473-0d3f-424c-222e-f615ae75dd00/public" alt="Dog-friendly restaurants and bars in Toronto" class="h-5 w-5"></div>
+                            <div><a href="/restaurants"
+                                    class="{{ request()->is('/restaurants') ? 'bg-gray-900 text-blue-900' : 'text-blue-900' }} hover:bg-white hover:text-gray-500 px-2 py-2 rounded-md text-xs font-normal">Restaurants & Bars</a></div>
+                        </div>
+
+                        <div class="flex flex-row mt-6">
+                            <div><img src="https://imagedelivery.net/oft5YRXFnZE_M4wW8ODw6Q/c2cfa092-78bb-4022-9f0f-2ac2391e0c00/public" alt="Places in Toronto that allow dogs indoors" class="h-5 w-5"></div>
+                            <div><a href="/indoors"
+                                    class="{{ request()->is('/indoors') ? 'bg-gray-900 text-pink-600' : 'text-pink-600' }} hover:bg-white hover:text-gray-500 px-2 py-2 rounded-md text-xs font-normal">Paws Indoors</a></div>
+                        </div>
                     </div>
                 </div>
 
             </div>
 
-            <div class="-mr-2 flex md:hidden">
+            <div class="-mr-0 flex md:hidden">
                 <!-- Mobile menu button -->
                 <button type="button" id="mobile-menu-button"
                         class="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-600 hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
@@ -110,7 +141,7 @@
 
                       Menu open: "hidden", Menu closed: "block"
                     -->
-                    <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    <svg class="block h-6 w-6 mr-4" xmlns="http://www.w3.org/2000/svg" fill="none"
                          viewBox="0 0 24 24"
                          stroke-width="1.5" stroke="currentColor" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -152,14 +183,7 @@
                             </form>
                         </div>
                     @endauth
-                    @guest
-                        <div class="ml-3">
-                            <a href="/register"
-                               class="{{ request()->is('/register') ? 'bg-gray-900 text-black' : 'text-black' }} hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"></a>
-                            <a href="/login"
-                               class="{{ request()->is('/login') ? 'bg-gray-900 text-black' : 'text-black' }} hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"></a>
-                        </div>
-                    @endguest
+
                 </div>
             </div>
         </div>
@@ -170,24 +194,30 @@
     <div class="md:hidden hidden" id="mobile-menu">
         <div class="space-y-1 px-2 pt-2 pb-3 sm:px-3">
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-            <a href="/" class="bg-white text-black block px-3 py-2 rounded-md text-base font-medium"
-               aria-current="page">Home</a>
-
             <a href="/places"
-               class="text-black hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">All
-                places</a>
+               class="text-black block px-3 py-2 rounded-md text-base font-medium">All
+                Places</a>
 
             <a href="/pubs"
-               class="text-black hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Pubs
+               class="text-black block px-3 py-2 rounded-md text-base font-medium">Pubs
                 & Breweries</a>
 
             <a href="/cafes"
-               class="text-black hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Cafes
+               class="text-black block px-3 py-2 rounded-md text-base font-medium">Cafes
                 & Coffee shops</a>
 
             <a href="/restaurants"
-               class="text-black hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Bars
+               class="text-black block px-3 py-2 rounded-md text-base font-medium">Bars
                 & Restaurants</a>
+            <a href="/indoors"
+               class="text-black block px-3 py-2 pb-6 rounded-md text-base font-medium">Paws Indoors</a>
+
+            <hr class="h-px mx-4 bg-gray-200 border-0 dark:bg-gray-700">
+
+            <a href="/contact"
+               class="text-black block px-3 py-2 pt-6 rounded-md text-base font-medium">Contact</a>
+            <a href="/about"
+               class="text-black block px-3 py-2 rounded-md text-base font-medium">About Paws List</a>
         </div>
     </div>
 </nav>
@@ -196,59 +226,64 @@
     @yield('content')
 </div>
 <footer>
-    <div class="bg-white border-t-2 border-black mt-6">
+    <div class="bg-white border-t-2 border-black mt-10">
         <div class="h-auto mt-0 mb-6 mx-auto max-w-7xl px-4 sm:px-6 lg:px-20 sm:pb-20 sm:pt-12 lg:pl-20">
-            <h3 class="lg:text-xl sm:text-5xl md:text-5xl sm:mb-6 md:mb-6 lg:mb-2">Explore PawsList</h3>
+            <h3 style="color:#ED3163;" class="text-2xl font-bold mt-6 lg:mt-2">Explore Paws List</h3>
             <div class="flex flex-row grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
                 <div class="mt-6">
-                    <h2 class="lg:text-sm sm:text-3xl font-bold">Downtown Toronto</h2>
-                    <ul class="lg:text-sm sm:text-3xl text-gray-500 mt-2">
+                    <h2 class="text-base font-bold"><a href="/places/search?search=&neighbourhood=Down+Town">Downtown Toronto</a></h2>
+                    <ul class="text-sm text-gray-500 mt-2 leading-7">
                         <li><a href="/pubs/downtown">Pubs & Breweries</a></li>
                         <li>Cafe & Coffee shops</li>
                         <li>Restaurants & Bars</li>
                     </ul>
                 </div>
                 <div class="mt-6">
-                    <h2 class="lg:text-sm sm:text-3xl font-bold">East Toronto</h2>
-                    <ul class="lg:text-sm sm:text-3xl text-gray-500 mt-2">
+                    <h2 class="text-base font-bold"><a href="/places/search?search=&neighbourhood=East+End">East Toronto</a></h2>
+                    <ul class="text-sm text-gray-500 mt-2 leading-7">
                         <li>Pubs & Breweries</li>
                         <li>Cafe & Coffee shops</li>
                         <li>Restaurants & Bars</li>
                     </ul>
                 </div>
                 <div class="mt-6">
-                    <h2 class="lg:text-sm sm:text-3xl font-bold">North Toronto</h2>
-                    <ul class="lg:text-sm sm:text-3xl text-gray-500 mt-2">
+                    <h2 class="text-base font-bold"><a href="/places/search?search=&neighbourhood=North+York">North Toronto</a></h2>
+                    <ul class="text-sm text-gray-500 mt-2 leading-7">
                         <li>Pubs & Breweries</li>
                         <li>Cafe & Coffee shops</li>
                         <li>Restaurants & Bars</li>
                     </ul>
                 </div>
                 <div class="mt-6">
-                    <h2 class="lg:text-sm sm:text-3xl font-bold">West Toronto</h2>
-                    <ul class="lg:text-sm sm:text-3xl text-gray-500 mt-2">
+                    <h2 class="text-base font-bold"><a href="/places/search?search=&neighbourhood=West+End">West Toronto</a></h2>
+                    <ul class="text-sm text-gray-500 mt-2 leading-7">
                         <li>Pubs & Breweries</li>
                         <li>Cafe & Coffee shops</li>
                         <li>Restaurants & Bars</li>
                     </ul>
                 </div>
                 <div class="mt-6">
-                    <h2 class="lg:text-sm sm:text-3xl font-bold">Midtown Toronto</h2>
-                    <ul class="lg:text-sm sm:text-3xl text-gray-500 mt-2">
+                    <h2 class="text-base font-bold"><a href="/places/search?search=&neighbourhood=Mid+Town">Midtown Toronto</a></h2>
+                    <ul class="text-sm text-gray-500 mt-2 leading-7">
                         <li>Pubs & Breweries</li>
                         <li>Cafe & Coffee shops</li>
                         <li>Restaurants & Bars</li>
                     </ul>
                 </div>
                 <div class="mt-6">
-                    <h2 class="lg:text-sm sm:text-3xl font-bold">Other stuff</h2>
-                    <ul class="lg:text-sm sm:text-3xl text-gray-500 mt-2 mb-20">
+                    <h2 class="text-base font-bold">Other Stuff</h2>
+                    <ul class="text-sm text-gray-500 mt-2 mb-20 leading-7">
                         <li><a href="/contact">Contact</a></li>
+                        <li><a href="/about">About</a></li>
                     </ul>
-                </div>
-                <!-- Columns -->
-            </div>
 
+
+                </div>
+
+            </div>
+<hr/>
+            <a href="https://www.instagram.com/paws.list" target="_blank"><img class="ml-0 mt-6 h-6 w-6" src="https://imagedelivery.net/oft5YRXFnZE_M4wW8ODw6Q/10c4691c-becf-451c-e7e2-b065d485e100/public"</a>
+            <p class="mt-3 pb-6 lg:pb-0 text-xs">© Paws List 2023. All rights reserved.</p>
         </div>
     </div>
 

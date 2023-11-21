@@ -11,7 +11,7 @@ class CafesController extends Controller
     public function cafes()
     {
         $places = Places::where('type', 'cafe')
-            ->orWhere('type', 'coffee shop')->orWhere('type', 'bakery')->orWhere('type', 'ice cream shop')->get();
+            ->orWhere('type', 'coffee shop')->orWhere('type', 'bakery')->orWhere('type', 'ice cream shop')->paginate(Config('app.limit'));
         $neighbourhoods = Places::select("neighbourhood")->distinct()->orderBy('neighbourhood', 'asc')->pluck('neighbourhood');
         return view('cafes', ['places' => $places, 'neighbourhoods' => $neighbourhoods]);
     }
@@ -43,7 +43,7 @@ class CafesController extends Controller
                         ->orWhere('type', 'coffee shop')->orWhere('type', 'bakery')->orWhere('type', 'ice cream shop');
                 });
         }
-        $places = $placesQuery->get();
+        $places = $placesQuery->paginate(Config('app.limit'));
 
         $neighbourhoods = Places::select("neighbourhood")->distinct()->orderBy('neighbourhood', 'asc')->pluck('neighbourhood');
         return view('cafes', ['places' => $places, 'neighbourhoods' => $neighbourhoods, "selected_neighbourhood" => $neighbourhood, 'search' => $searchTerm, 'indoor' => $indoor]);

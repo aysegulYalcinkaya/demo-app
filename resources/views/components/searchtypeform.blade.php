@@ -1,9 +1,12 @@
 
-
-            <input autocomplete="off" class="shadow appearance-none border rounded w-full md:w-3/5 py-2 px-3 mb-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                   name="search" id="search" type="text" placeholder="Search for establishment, address, city..." value="{{ $search }}">
-
-
+        <input autocomplete="off" class="shadow appearance-none border rounded w-full md:w-2/5 py-2 px-3 mb-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+               name="search" id="search" type="text" placeholder="Search for establishment, address, city..." value="{{ $search }}">
+        <select name="type" class="shadow appearance-none border rounded w-full md:w-1/5 py-2 px-3 mb-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            <option value="">Select type</option>
+            @foreach($types as $type)
+                <option value="{{ $type }}" {{ ($type==$selected_type?"selected":"") }}>{{ $type }}</option>
+            @endforeach
+        </select>
         <select name="neighbourhood" class="shadow appearance-none border rounded w-full md:w-1/5 py-2 px-3 mb-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
             <option value="">Select neighbourhood</option>
             @foreach($neighbourhoods as $neighbourhood)
@@ -11,7 +14,7 @@
             @endforeach
         </select>
 
-        <label for="inside" class="ml-5">
+        <label for="inside" class="ml-3">
             <input type="checkbox" {{ $indoor=="1"?"checked":"" }} name="indoor" value="1" class="shadow appearance-none border rounded py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
             Indoor?
         </label>
